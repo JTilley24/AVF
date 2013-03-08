@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>AVF Android App</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <!--Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet">
+       
+        <script src="js/libs/modernizr.custom.min.js"></script>
+    </head>
+    <body>
+        <div data-role="header">
+            <h1>AVF Android App</h1>
+        </div>
+        <div data-role="content">
+            <h2>Justin Tilley</h2>
+            <h3>AVF 1303</h3>
+            <ul data-role="listview" id="discussions">
+                <li><a href="#">Week 1 Discussion</a></li>
+                <li><a href="#">Week 2 Discussion</a></li>
+                <li><a href="#">Week 3 Discussion</a></li>
+            </ul>
+            <ul class="ui-grid-a" id="comp">
+                <li class="ui-block-a"><a href="#">Native components</a></li>
+                <li class="ui-block-b"><a href="#">API data</a></li>
+            </ul>
+        </div>
+        
+        <script src="js/libs/jquery-1.8.3.js"></script>
+        <script src="js/libs/jquery.mobile-1.2.0.min.js"></script>
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
