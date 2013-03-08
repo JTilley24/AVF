@@ -7,16 +7,3 @@ AVF 1303
 	width: 40%;
 	margin-left: 25%;
 }
-
-#comp{
-	margin-top: 30px;
-	list-style: none;	
-}
-
-#comp li{
-	border: 1px solid #1119F5;
-	border-radius: 10px;
-	background: #CFCFE3;
-	padding: 10px;
-	
-}
