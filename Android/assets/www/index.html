@@ -8,50 +8,163 @@
         
         <!--Stylesheets-->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link href="css/style.css" rel="stylesheet" />
         <link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet">
+        <link href="css/DIYRepair.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />
+        
+        <!--Js Video-->
+       	<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
        
         <script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     <body>
-        <div data-role="header">
-            <h1>AVF Android App</h1>
-        </div>
-        <div data-role="content">
-            <h2>Justin Tilley</h2>
-            <h3>AVF 1303</h3>
-            <ul data-role="listview" id="discussions">
-                <li><a href="#">Week 1 Discussion</a></li>
-                <li><a href="#">Week 2 Discussion</a></li>
-                <li><a href="#">Week 3 Discussion</a></li>
-            </ul>
-        </div>
-        <div>
-            <ul data-role="listview" >
-                <li data-role="collapsible" id="native">
-                	<h3>Native Components</h3>
-                	<ul>
-                		<li><a href="#">Contacts</a></li>
-                		<li><a href="#">Barcode Scanner</a></li>
-                		<li><a href="#">Facebook</a></li>
-                		<li><a href="#">Compass</a></li>
-                		<li><a href="#">Weather</a></li>
-                	</ul>
-                </li>
-                <li data-role="collapsible" id="api">
-                	<h3>Data API</h3>
-                	<ul>
-                		<li><a href="#">Vehicle MPG ratings</a></li>
-                		<li><a href="#">NADA information</a></li>
-                	</ul>
-                </li>
-            </ul>
-        </div>
+        <section data-role="page" id="home">
+        	<header data-role="header">
+        		<h1>AVF Android App</h1>
+        		<a href="#login">Login</a>
+        	</header>
+        	<section data-role="content" id="browse">
+        		<ul data-role="listview">
+        			<li><a href="#"><img src="img/car.png" class="ui-li-thumb"><h3>Vehicle Info</h3></a></li>
+        			<li><a href="#"><img src="img/vinscan.png" class="ui-li-thumb"><h3>VIN Scanner</h3></a></li>
+        			<li><a href="#"><img src="img/repair.png" class="ui-li-thumb"><h3>Local Repair Shop</h3></a></li>
+        			<li><a href="#"><img src="img/weather.png" class="ui-li-thumb"><h3>Weather and Traffic</h3></a></li>
+        			<li><a href="#"><img src="img/tire.png" class="ui-li-thumb"><h3>Dyno and Track Test</h3></a></li>
+        		</ul>
+        		<h3>Justin Tilley AVF1303</h3>
+        	</section>
+        	<footer data-role="footer" data-position="fixed">
+        		<section data-role="navbar">
+        			<ul>
+        				<li><a href="#home" data-icon="home">Home</a></li>
+        				<li><a href="#search" data-icon="search">Twitter Search</a></li>
+        				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+        				<li><a href="#research" data-icon="info">Research</a></li>
+        			</ul>
+        		</section>
+        	</footer>
+        </section>
+        <section data-role="page" id="login" data-add-back-btn="true">
+        	<header data-role="header">
+        		<h1>Login</h1>
+        	</header>
+        	<section data-role="content" id="loginform">
+        		<h2>Login</h2>
+        		<form action="" method="post">
+        			<h4>Username:</h4>
+        			<input type="text" name="user"/>
+        			<h4>Password:</h4>
+        			<input type="password" name="pass"/>
+        			<input type="submit" name="login" value="login"/>
+        		</form>
+        	</section>
+        	<section>
+        		<h3>Login in with Twitter</h3>
+        		<a href="#" data-role="button" align="center" id="twitter"><img src="img/twitter.png"  width="50" height="50"></a>
+        	</section>
+        	<footer data-role="footer" data-position="fixed">
+        		<section data-role="navbar">
+        			<ul>
+        				<li><a href="#home" data-icon="home">Home</a></li>
+        				<li><a href="#search" data-icon="search">Twitter Search</a></li>
+        				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+        				<li><a href="#research" data-icon="info">Research</a></li>
+        			</ul>
+        		</section>
+        	</footer>
+        </section>
+        <section data-role="page" id="search" data-add-back-btn="true">
+        	<header data-role="header">
+        		<h1><img src="img/twitter.png" width="25" height="25">Twitter Search</h1>
+        	</header>
+        	<section data-role="content">
+        		<input type="text" id="searchfield" placeholder="Search Twitter"/>
+        		<a href="#" data-role="button" id="searchbtn">Search</a>
+        		<ul data-role="listview" id="results" style="display:none">
+        		</ul>
+        	</section>
+        	<footer data-role="footer" data-position="fixed">
+        		<section data-role="navbar">
+        			<ul>
+        				<li><a href="#home" data-icon="home">Home</a></li>
+        				<li><a href="#search" data-icon="search">Twitter Search</a></li>
+        				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+        				<li><a href="#research" data-icon="info">Research</a></li>
+        			</ul>
+        		</section>
+        	</footer>
+        </section>
+        <section data-role="page" id="vehicle" data-add-back-btn="true">
+        	<header data-role="header">
+        		<h1>Vehicle VIN Search</h1>
+        	</header>
+        	<section data-role="content">
+        		<ul data-role="collapsible" style="margin-left:-40px">
+        			<h2>How To find VIN Number</h2>
+        			<video id="vinvideo" class="video-js vjs-default-skin" controls preload="auto" width="440" height="220" data-setup="{}">
+        				<source src="video/vin.webm" type="video/webm">
+        			</video>
+        		</ul>
+        		<input type="text" id="vinsearch" placeholder="Enter VIN"/>
+        		<a href="#" data-role="button" id="vinbtn">Enter</a>
+        		<section id="carresults" style="display:none">
+        		</section>
+        	</section>
+        	<footer data-role="footer" data-position="fixed">
+        		<section data-role="navbar">
+        			<ul>
+        				<li><a href="#home" data-icon="home">Home</a></li>
+        				<li><a href="#search" data-icon="search">Twitter Search</a></li>
+        				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+        				<li><a href="#research" data-icon="info">Research</a></li>
+        			</ul>
+        		</section>
+        	</footer>
+        </section>
+        <section data-role="page" id="research" data-add-back-btn="true">
+        	<header data-role="header">
+        		<h1>Research</h1>
+        	</header>
+        	<section data-role="content">
+        		<ul data-role="listview">
+        			<li data-role="collapsible">
+        				<h2>Week 1 Discussion</h2>
+        				<h3>Data Research/Project Intent</h3>
+        				<p><blockquote>Twitter can be used to simplify multiple logins in different apps with the “live” data resources. Therefore, a person will only need to remember their Twitter account and not several username and password combinations. Also, as Twitter has all personal information of the user, it can be used to quickly fill out that information on other forms including payments. Having all the information of a person stored within one general account like Twitter or Facebook makes it easier in using other outlets.<br>
+							<br>The need for JSONP is because it allows for requesting data from a different domain. It seems that it is basically a code wrapper that retrieve code across different servers and gets around the same-origin policy.<br>
+							<br>I can see that the geolocation works with Google Maps or MapQuest. Social networks work with contacts.<br>
+							<br>When I sat down to think about where I wanted to go with the app, I may have come up with too much for just one month. The main focus for this project is retrieving vehicles information and using geolocation to display nearby repair facilities. Other features include using the camera as Barcode Scanner for the VIN of a vehicle. Also, I have seen examples of using the accelerometer for 0-60 times and lateral G’s. Using social networks for comparisons and questions or Instagram for photo sharing.<br>
+							<br>Some past lessons learned for me is more of a mental note not to get frustrated when I get stuck. I used to spend too much time thinking about problems and end up over looking what usually turns out to be a simple syntax or even spelling error. </blockquote>
+						</p>
+        			</li>
+        			<li data-role="collapsible">
+        				<h2>Week 2 Discussion</h2>
+        				<p></p>
+        			</li>
+        			<li data-role="collapsible">
+        				<h2>Week 3 Discussion</h2>
+        				<p></p>
+        			</li>
+        		</ul>
+        	</section>
+        	<footer data-role="footer" data-position="fixed">
+        		<section data-role="navbar">
+        			<ul>
+        				<li><a href="#home" data-icon="home">Home</a></li>
+        				<li><a href="#search" data-icon="search">Twitter Search</a></li>
+        				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+        				<li><a href="#research" data-icon="info">Research</a></li>
+        			</ul>
+        		</section>
+        	</footer>
+        </section>
+       
         
         <script src="js/libs/jquery-1.8.3.js"></script>
         <script src="js/libs/jquery.mobile-1.2.0.min.js"></script>
         <script type="text/javascript" src="cordova-2.5.0.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script src="http://vjs.zencdn.net/c/video.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
