@@ -8,7 +8,7 @@ $("#vinbtn").on("click", function(){
 	console.log(vin);
 	var a = encodeURIComponent(vin);
 	$.getJSON("http://api.edmunds.com/v1/api/toolsrepository/vindecoder?vin=" + a + 
-		"&api_key=saw2xy7wdxjqfueuxkv5hm8w&fmt=json", 
+		"&api_key=saw2xy7wdxjqfueuxkv5hm8w&fmt=json&callback=jsonp", 
 		function(data){
 			console.log(data);
 			
