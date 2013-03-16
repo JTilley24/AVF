@@ -6,8 +6,8 @@ $("#vinbtn").on("click", function(){
 	var vin = $("#vinsearch").val();
 	console.log(vin);
 	var a = encodeURIComponent(vin);
-	$.getJSON("http://api.edmunds.com/v1/api/toolsrepository/vindecoder?vin=" + a + 
-		"&api_key=saw2xy7wdxjqfueuxkv5hm8w&fmt=json&callback=jsonp", 
+	$.getJSON("http://api.edmunds.com/api/v1/vehicle/vin/" + a + 
+		"/configuration?callback=jsonp&api_key=saw2xy7wdxjqfueuxkv5hm8w", 
 		function(data){
 			console.log(data);
 			
