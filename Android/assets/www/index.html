@@ -27,21 +27,21 @@
         		<ul data-role="listview">
         			<li><a href="#"><img src="img/car.png" class="ui-li-thumb"><h3>Vehicle Info</h3></a></li>
         			<li><a href="#"><img src="img/vinscan.png" class="ui-li-thumb"><h3>VIN Scanner</h3></a></li>
-        			<li><a href="#"><img src="img/repair.png" class="ui-li-thumb"><h3>Local Repair Shop</h3></a></li>
-        			<li><a href="#"><img src="img/weather.png" class="ui-li-thumb"><h3>Weather and Traffic</h3></a></li>
-        			<li><a href="#"><img src="img/tire.png" class="ui-li-thumb"><h3>Dyno and Track Test</h3></a></li>
+        			<li><a href="#local"><img src="img/repair.png" class="ui-li-thumb"><h3>Local Repair Shop</h3></a></li>
+        			<li><a href="#temp"><img src="img/weather.png" class="ui-li-thumb"><h3>Weather and Traffic</h3></a></li>
+        			<li><a href="#dyno"><img src="img/tire.png" class="ui-li-thumb"><h3>Dyno and Track Test</h3></a></li>
         		</ul>
         		<h3>Justin Tilley AVF1303</h3>
         	</section>
         	<footer data-role="footer" data-position="fixed">
-        		<section data-role="navbar">
+        		<nav data-role="navbar">
         			<ul>
         				<li><a href="#home" data-icon="home">Home</a></li>
         				<li><a href="#search" data-icon="search">Twitter Search</a></li>
         				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
         				<li><a href="#research" data-icon="info">Research</a></li>
         			</ul>
-        		</section>
+        		</nav>
         	</footer>
         </section>
         <section data-role="page" id="login" data-add-back-btn="true">
@@ -63,14 +63,14 @@
         		<a href="#" data-role="button" align="center" id="twitter"><img src="img/twitter.png"  width="50" height="50"></a>
         	</section>
         	<footer data-role="footer" data-position="fixed">
-        		<section data-role="navbar">
+        		<nav data-role="navbar">
         			<ul>
         				<li><a href="#home" data-icon="home">Home</a></li>
         				<li><a href="#search" data-icon="search">Twitter Search</a></li>
         				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
         				<li><a href="#research" data-icon="info">Research</a></li>
         			</ul>
-        		</section>
+        		</nav>
         	</footer>
         </section>
         <section data-role="page" id="search" data-add-back-btn="true">
@@ -84,14 +84,14 @@
         		</ul>
         	</section>
         	<footer data-role="footer" data-position="fixed">
-        		<section data-role="navbar">
+        		<nav data-role="navbar">
         			<ul>
         				<li><a href="#home" data-icon="home">Home</a></li>
         				<li><a href="#search" data-icon="search">Twitter Search</a></li>
         				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
         				<li><a href="#research" data-icon="info">Research</a></li>
         			</ul>
-        		</section>
+        		</nav>
         	</footer>
         </section>
         <section data-role="page" id="vehicle" data-add-back-btn="true">
@@ -101,7 +101,7 @@
         	<section data-role="content">
         		<ul data-role="collapsible" style="margin-left:-40px">
         			<h2>How To find VIN Number</h2>
-        			<video id="vinvideo" class="video-js vjs-default-skin" controls preload="auto" width="440" height="220" data-setup="{}">
+        			<video id="vinvideo" class="video-js vjs-default-skin" controls preload="auto" width="240" height="120" data-setup="{}">
         				<source src="video/vin.webm" type="video/webm">
         			</video>
         		</ul>
@@ -111,14 +111,14 @@
         		</section>
         	</section>
         	<footer data-role="footer" data-position="fixed">
-        		<section data-role="navbar">
+        		<nav data-role="navbar">
         			<ul>
         				<li><a href="#home" data-icon="home">Home</a></li>
         				<li><a href="#search" data-icon="search">Twitter Search</a></li>
         				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
         				<li><a href="#research" data-icon="info">Research</a></li>
         			</ul>
-        		</section>
+        		</nav>
         	</footer>
         </section>
         <section data-role="page" id="research" data-add-back-btn="true">
@@ -139,7 +139,12 @@
         			</li>
         			<li data-role="collapsible">
         				<h2>Week 2 Discussion</h2>
-        				<p></p>
+        				<h3>Accessibility</h3>
+        				<p><blockquote>I think the best way to make an app more accessible is through clean design and user-friendly objectives.  The HTML code needs to be semantic and tags should be used appropriately. With using jQuery Mobile, each page should have elements that have tags fitting to that element and be consistent through other pages. Re-using the same tag like div or section within the same page should be limited.<br>
+							<br>The most difficult part I can see with screen readers is the positioning of the content. Unfortunately, everything isn’t designed the same and content can be formatted different ways.  However, using semantic code can help define elements like titles and content with a corresponding tag. This allows the reader to better explain the content to the user.<br>
+							<br>I see that the iPhone is one of the leading devices for seeing impaired people. The integration of Siri is not just for easy use but allows blind people to utilize modern technology to make their lives easier. Project Ray is another device that plans to create smartphone geared directly to seeing impaired consumers. They joined together with Qualcomm, which is the largest mobile technology company, to create a completely new user interface that assist the blind and will actually learn for usage patterns.<br>
+							<br>Shine Reader is a great app for accessibility for blind or seeing impaired users. It creates a traditional keypad overlay over the screen to allow easy input. The entire screen is turned into a grid of buttons that makes for larger button surface. Also it contains speech recognition to tell the user the input and content. Georgie is another amazing app for the blind, which has an interface that responds and relays info to the user. Everything is customizable for the user down to the gps telling the user about their surroundings.</blockquote>
+						</p>
         			</li>
         			<li data-role="collapsible">
         				<h2>Week 3 Discussion</h2>
@@ -148,23 +153,115 @@
         		</ul>
         	</section>
         	<footer data-role="footer" data-position="fixed">
-        		<section data-role="navbar">
+        		<nav data-role="navbar">
         			<ul>
         				<li><a href="#home" data-icon="home">Home</a></li>
         				<li><a href="#search" data-icon="search">Twitter Search</a></li>
         				<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
         				<li><a href="#research" data-icon="info">Research</a></li>
         			</ul>
-        		</section>
+        		</nav>
         	</footer>
         </section>
-       
-        
+        <section data-role="page" id="local" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>Local Repairs</h1>
+			</header>
+			<section data-role="content">
+				<a href="#" id="locat" data-role="button">Get Location</a>
+			</section>
+			<section id="maps"data-role="content">
+				<div id="map-canvas">
+				</div>
+			</section>
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Twitter Search</a></li>
+						<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+						<li><a href="#research" data-icon="info">Research</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</section>
+		<section data-role="page" id="dyno" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>Dyno</h1>
+			</header>
+			<section data-role="content">
+				<a href="#" id="accel" data-role="button">Get Acceleration</a>
+				<div id="dynoinfo">
+				</div>
+				<a href="#" id="stopd" data-role="button" style="display:none">Stop Acceleration</a>
+			</section>
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Twitter Search</a></li>
+						<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+						<li><a href="#research" data-icon="info">Research</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</section>
+        <section data-role="page" id="scan" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>VIN Scanner</h1>
+			</header>
+			<section data-role="content">
+				<a href="#" id="scanbtn" data-role="button">Take Picture</a>
+				<div id="scanResults">
+					<input type="text" id="scantxt"/>
+					<a href="#" id="decode" data-role="button">Decode</a>
+				</div>
+			</section>
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Twitter Search</a></li>
+						<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+						<li><a href="#research" data-icon="info">Research</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</section>
+		
+        <section data-role="page" id="temp" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>Weather and Compass</h1>
+			</header>
+			<section data-role="content">
+				<ul data-role="listview" id="weather">
+				</ul>
+				<div id="compass">
+					<h2 id="heading"></h2>
+					<img src="img/compass.png" id="nat">
+				</div>
+			</section>
+			<footer data-role="footer" data-position="fixed">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Twitter Search</a></li>
+						<li><a href="#vehicle" data-icon="star">Edmund's API</a></li>
+						<li><a href="#research" data-icon="info">Research</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</section>
         <script src="js/libs/jquery-1.8.3.js"></script>
         <script src="js/libs/jquery.mobile-1.2.0.min.js"></script>
+        <script src="js/libs/jquery.ui.map.full.min.js"></script>
         <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/barcodescanner.js"></script>
+        <script type="text/javascript" src="js/libs/jQueryRotate.2.2.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCEkgDX7_mDjucudKX5Y_JNWXxwHk0LRJE&sensor=false&libraries=places"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script src="http://vjs.zencdn.net/c/video.js"></script>
+        
         <script type="text/javascript">
             app.initialize();
         </script>

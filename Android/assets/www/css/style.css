@@ -7,9 +7,7 @@ AVF 1303
 	width: 40%;
 	margin-left: 25%;
 }
-
 #browse{
-	background: #CCC;
 	border-top: 1px solid #BFBFBF;
 	padding: 15px 11px;
 }
@@ -127,4 +125,76 @@ img[src="img/edmunds.png"]{
 #carresults ul li{
 	padding-top: 10px;
 	color: #228A1D;
-]
+}
+#map-canvas{
+	height: 75%;
+	width: 95%;
+	position: absolute;
+}
+#dynoinfo{
+	font-size: 15px;
+	text-decoration: bold;
+	text-align: center;
+}
+#dynoinfo img{
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+#weather{
+	list-style: none;
+	border: 1px solid #B4B4B4;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+	background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C */
+
+}
+#compass {
+	list-style: none;
+	border: 1px solid #B4B4B4;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+	background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C */
+}
+#heading{
+	text-align: center
+	font-size: 15px;
+}
+#nat{
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+	height: 50%;
+	width: 75%;
+}
+@media only screen and (device-width: 480px){
+	#weather li h2{
+		font-size: 30px;
+	}
+	#weather li img{
+		height: 75px;
+		width: 100px;
+		float: right;
+		display: block;
+	}
+	#weather li p{
+		font-size: 20px;
+		
+	}
+	#dynoinfo{
+		font-size: 20px;
+		text-decoration: bold;
+	}
+}

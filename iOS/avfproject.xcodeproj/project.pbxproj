@@ -41,6 +41,10 @@
 		30A0434914DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434614DC770100060A13 /* Localizable.strings */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		CB1474C416FA0A5300EEA9E4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1474C316FA0A5300EEA9E4 /* CoreVideo.framework */; };
+		CB1474C616FA0A6500EEA9E4 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1474C516FA0A6500EEA9E4 /* libiconv.dylib */; };
+		CB1FBEA116FA17060066CC0C /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB1FBE9E16FA17060066CC0C /* CDVBarcodeScanner.mm */; };
+		CB1FBEA216FA17060066CC0C /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB1FBE9F16FA17060066CC0C /* zxing-all-in-one.cpp */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 /* End PBXBuildFile section */
@@ -103,6 +107,11 @@
 		32CA4F630368D1EE00C91783 /* avfproject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "avfproject-Prefix.pch"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* avfproject-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "avfproject-Info.plist"; path = "../avfproject-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CB1474C316FA0A5300EEA9E4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CB1474C516FA0A6500EEA9E4 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		CB1FBE9E16FA17060066CC0C /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CDVBarcodeScanner.mm; path = "../../../../phonegap-plugins-master/iOS/BarcodeScanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; };
+		CB1FBE9F16FA17060066CC0C /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "zxing-all-in-one.cpp"; path = "../../../../phonegap-plugins-master/iOS/BarcodeScanner/zxing-all-in-one.cpp"; sourceTree = "<group>"; };
+		CB1FBEA016FA17060066CC0C /* zxing-all-in-one.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "zxing-all-in-one.h"; path = "../../../../phonegap-plugins-master/iOS/BarcodeScanner/zxing-all-in-one.h"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = avfproject/config.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1474C616FA0A6500EEA9E4 /* libiconv.dylib in Frameworks */,
+				CB1474C416FA0A5300EEA9E4 /* CoreVideo.framework in Frameworks */,
 				5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */,
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -216,6 +227,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB1474C516FA0A6500EEA9E4 /* libiconv.dylib */,
+				CB1474C316FA0A5300EEA9E4 /* CoreVideo.framework */,
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -246,6 +259,9 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				CB1FBE9E16FA17060066CC0C /* CDVBarcodeScanner.mm */,
+				CB1FBE9F16FA17060066CC0C /* zxing-all-in-one.cpp */,
+				CB1FBEA016FA17060066CC0C /* zxing-all-in-one.h */,
 			);
 			name = Plugins;
 			path = avfproject/Plugins;
@@ -412,6 +428,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				CB1FBEA116FA17060066CC0C /* CDVBarcodeScanner.mm in Sources */,
+				CB1FBEA216FA17060066CC0C /* zxing-all-in-one.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +493,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "avfproject/avfproject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZBarSDK\"",
+				);
 				PRODUCT_NAME = avfproject;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,6 +514,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "avfproject/avfproject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZBarSDK\"",
+				);
 				PRODUCT_NAME = avfproject;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
