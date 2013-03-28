@@ -10,16 +10,20 @@ $("#vinbtn").on("click", function(){
 		"&api_key=saw2xy7wdxjqfueuxkv5hm8w&fmt=json&callback=?",
 		function(data){
 			console.log(data);
-			
-			$("#carresults").append("<img src='img/edmunds.png' width='50' height='50'><h2>" + data.styleHolder[0].year + " " + data.styleHolder[0].makeName + " " +
-				data.styleHolder[0].modelName + "</h2><ul class='ui-grid-a'><li class='ui-block-a'>Engine: " +
-				data.styleHolder[0].engineSize + " liters</li><li class='ui-block-b'>Cylinders: " + 
-				data.styleHolder[0].engineCylinder + " cylinders</li><li class='ui-block-a'>Transmission: " + 
-				data.styleHolder[0].transmissionType + "</li><li class='ui-block-b'>Body Type: " + data.styleHolder[0].subModels[0].identifier + 
-				"</li><li class='ui-block-a'>Private Value:  $" + data.styleHolder[0].price.usedPrivateParty + "</li><li class='ui-block-b'>Trade-In Value: $" + 
-				data.styleHolder[0].price.usedTradeIn + "</li>")
-	});
-	$("#carresults").show();	
+			if((data.styleHolder == "undefined") || (data.error)){
+				alert("Not a valid VIN number")
+			}else{
+				$("#carresults").append("<img src='img/edmunds.png' width='50' height='50'><h2>" + data.styleHolder[0].year + " " + data.styleHolder[0].makeName + " " +
+					data.styleHolder[0].modelName + "</h2><ul class='ui-grid-a'><li class='ui-block-a'>Engine: " +
+					data.styleHolder[0].engineSize + " liters</li><li class='ui-block-b'>Cylinders: " + 
+					data.styleHolder[0].engineCylinder + " cylinders</li><li class='ui-block-a'>Transmission: " + 
+					data.styleHolder[0].transmissionType + "</li><li class='ui-block-b'>Body Type: " + data.styleHolder[0].subModels[0].identifier + 
+					"</li><li class='ui-block-a'>Private Value:  $" + data.styleHolder[0].price.usedPrivateParty + "</li><li class='ui-block-b'>Trade-In Value: $" + 
+					data.styleHolder[0].price.usedTradeIn + "</li>")
+				$("#carresults").show();
+			}
+	})
+		
 });
 
 
@@ -32,13 +36,19 @@ $("#searchbtn").on("click", function(){
 				"&rpp=3&include_entities=true&callback=?",
 	function(data){
 		console.log(data);
-		for (i=0, j=data.results.length; i<j; i++){
-			$("#results").append("<li>"+"<img src='" + data.results[i].profile_image_url + "' /><h3>" + data.results[i].from_user_name +
-			 "</h3><span>" + 
-			data.results[i].created_at + "<img src='img/twitter.png' width='20' height='20'></span><p>" + data.results[i].text + "</p></li>");
-		};
+		if((data.results == 0) || (data.error)){
+			alert("No Results");
+		}else{
+			for (i=0, j=data.results.length; i<j; i++){
+				$("#results").append("<li>"+"<img src='" + data.results[i].profile_image_url + "' /><h3>" + data.results[i].from_user_name +
+				 "</h3><span>" + 
+				data.results[i].created_at + "<img src='img/twitter.png' width='20' height='20'></span><p>" + data.results[i].text + "</p></li>");
+			};
+			$("#results").show();
+		}
 	});
-	$("#results").show();
+	
+	
 });
 
 $("#locat").on("click", function(){
@@ -60,7 +70,7 @@ $("#locat").on("click", function(){
 		})
 		var request = {
 			location: pos,
-			radius: 1000,
+			radius: 2500,
 			keyword: "auto repair"
 		}
 		var callback = function(results, status){
@@ -78,11 +88,23 @@ $("#locat").on("click", function(){
 				map: map,
 				position: place.geometry.location
 			});	
-			console.log(place)
+			console.log(place);
+			
 			google.maps.event.addListener(marker,"click", function(){
-				infowindow.setContent("<strong>" + place.name +"</strong>" + "<br>" + place.vicinity + "</br>");
+				infowindow.setContent("<strong>" + place.name +"</strong>" + "<p>" + place.vicinity + '</p><a href="#search" id="maptweet"><img src="img/twitter.png" width="25px" height="25px"></a>');
 				infowindow.open(map, this);
-			})
+				console.log(place.name);
+				//Twitter search for local shop
+				google.maps.event.addListener(infowindow,"domready", function(){
+					$("#maptweet").on("click", function(){
+						console.log(place.name);
+						//$.mobile.changePage($("#search"));
+						$("#searchfield").val(place.name);
+					});
+				})
+				
+			});
+			
 		};
 			var service = new google.maps.places.PlacesService(map);
 			service.nearbySearch(request, callback);
@@ -108,22 +130,21 @@ $("#locat").on("click", function(){
 
 
 $("#accel").on("click", function(){
-			document.addEventListener("deviceready", loaded, false);
 			
-			function loaded() {
+			var loaded = function() {
 				startWatch();
 			}
-			function startWatch() {
+			var startWatch = function() {
 				var options = { frequency: 400 };
 				watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 			}
-			function stopWatch() {
+			var stopWatch = function() {
 				if (watchID) {
 					navigator.accelerometer.clearWatch(watchID);
 					watchID = null;
 				}
 			}
-			function onSuccess(acceleration) {
+			var onSuccess = function(acceleration) {
 				var element = document.getElementById('dynoinfo');
 				element.innerHTML = "Lateral G's: " + (acceleration.x - 1);
 				
@@ -132,14 +153,18 @@ $("#accel").on("click", function(){
 				$("#stopd").show();
 									
 			}
-			function onError() {
+			var onError = function() {
 				alert('onError!');
 			}
+			
+			loaded();
+			
 			$("#stopd").on("click", function(){
 				stopWatch();
 				$("#stopd").hide();
 			})
 })
+
 
 
 $("#scan").on("pageinit", function(){
@@ -150,11 +175,11 @@ $("#scan").on("pageinit", function(){
 		 
 		var resultsList = $("#scanResults")
 		
-		function scanNext() {
+		var scanNext = function() {
 			window.plugins.barcodeScanner.scan(scannerSuccess, scannerFailure);
 		}
 	
-		function scannerSuccess(result) {
+		var scannerSuccess = function(result) {
 			console.log("scanner returned: " + JSON.stringify(result));
 			
 			$("#scantxt").val(result.text);
@@ -167,11 +192,9 @@ $("#scan").on("pageinit", function(){
 			
 			})
 		}
-	
-		function scannerFailure() {
+		var scannerFailure = function() {
 			alert("Failure");
 		}
-		
 		scanNext();
 	});
 	
@@ -189,14 +212,13 @@ $("#temp").on("pageinit", function(){
 		  success : function(results) {
 			console.log(results)
 			var location = results.location.city+","+ results.location.state;
-		  var temp_f = results.current_observation.temp_f;
-		  $("#weather").append("<li>"+"<img src='" + results.current_observation.icon_url + "' /><h2>" + location  +
-			 "</h2><p>Temp: " + 
-			temp_f + "&deg</p></li>");
-			
+			var temp_f = results.current_observation.temp_f;
+			$("#weather").append("<li>"+"<img src='" + results.current_observation.icon_url + "' /><h2>" + location  +
+				"</h2><p>Temp: " + 
+				temp_f + "&deg</p></li>");
 		  }
 		})
-		}
+	}
 	var onError = function(error){
 		alert(error.message)
 	}
@@ -204,7 +226,7 @@ $("#temp").on("pageinit", function(){
 	
 	
 	var options = { frequency: 400 };
-    function compSuccess(heading) {
+    var compSuccess = function(heading) {
        console.log(heading.magneticHeading);
        var direction;
        if((heading.magneticHeading > 337.5) || (heading.magneticHeading < 22.5)){
@@ -231,7 +253,7 @@ $("#temp").on("pageinit", function(){
 		$("#nat").rotate(360 - (heading.magneticHeading));
     }
 
-    function compError() {
+    var compError = function() {
         alert('onError!');
     }
     navigator.compass.watchHeading(compSuccess, compError, options);

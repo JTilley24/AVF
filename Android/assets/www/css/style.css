@@ -29,9 +29,9 @@ AVF 1303
 	border-radius: 10px;
 }
 
-#browse ul li a{
-	margin: 0 20px 10px;
-	padding: 7px 10px;
+#browse ul li img{
+	width: 70px;
+	margin: 7px;
 }
 
 #browse ul li h3{
@@ -130,6 +130,20 @@ img[src="img/edmunds.png"]{
 	height: 75%;
 	width: 95%;
 	position: absolute;
+}
+div strong{
+	text-decoration: underline;
+	font-size: 14px;
+}
+#maptweet{
+	height: 10px;
+	width: 10px;
+}
+#maptweet img{
+	float: right;
+	height: 30px;
+	width: 30px;
+	margin-top: 7px;
 }
 #dynoinfo{
 	font-size: 15px;
